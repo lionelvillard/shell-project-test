@@ -1,0 +1,22 @@
+name: testfsh
+version: 0.0.1
+
+actions:
+  echo:
+    kind: nodejs
+    code: const main = ({ msg }) => { console.log(msg); return {msg}; }
+
+environments:
+  dev:
+    writable: true
+    promote:
+    - stage-us
+    - stage-eu
+  qa:
+    writable: true
+  stage-us:
+  stage-eu:
+  test:
+    writable: true
+    versioned: true
+
